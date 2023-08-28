@@ -532,8 +532,9 @@ form {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .u-full-width {
   width: 30%;
-  box-sizing: border-box; 
+  box-sizing: border-box;
   font-size: medium;
+  opacity: 1;
 }
 @media (max-width: 768px) {
   .u-full-width{

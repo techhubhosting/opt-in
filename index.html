@@ -27,15 +27,15 @@
     <!-- script
     ================================================== -->
     <script src="js/modernizr.js"></script>
-
+    <script>
+      function redirectToURL() {
+          // Redirect to the desired URL
+          window.location.href = "https://salescopylight.netlify.app";
+      }
+  </script>
+  
   </head>
   <body>
-
-    <div class="preloader-wrapper">
-      <div class="preloader">
-      </div>
-    </div>
-
     <section class="site-banner jarallax padding-large">
       <div class="container">
         <img src="images/logolight.png" alt="Logo" id="logo">
@@ -44,20 +44,20 @@
             <h2 class="page-title leftslide"><u>RECEIVE FREE INSIDER INFO</u> TO KICKSTART YOUR <br> JOURNEY TOWARD FINANCIAL FREEDOM!</h2>
             </div>
             <div class="col-md-12">
-              <form>
+              <form id="myForm" onsubmit="redirectToURL(); return false;">
                 <div class="row">
                   <label for="exampleRecipientInput"><u>SIGN UP</u> for the Forex Bulls Academy EMAIL LIST <u>NOW!</u></label>
                   <div class="col-md-12">
-                    <input class="u-full-width" type="text" placeholder="Full Name" id="name" required>
+                    <input class="u-full-width" type="text" placeholder="Full Name" name="Full name" required>
                   </div>
                   <div class="col-md-12">
-                    <input class="u-full-width" type="email" placeholder="Email Address" id="email" required>
+                    <input class="u-full-width" type="email" placeholder="Email Address" name="Email" required>
                   </div>
                   <div class="col-md-12">
-                    <input class="u-full-width" type="tel" placeholder="Phone Number" id="phone" required>
+                    <input class="u-full-width" type="tel" placeholder="Phone Number"name="Phone" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
                   </div>
                   <div class="col-md-12">
-                    <select id="country" class="u-full-width" required>
+                    <select name="Country" class="u-full-width" required>
                       <option value="" disabled selected hidden>Country</option>
                       <option value="Afghanistan">Afghanistan</option>
                       <option value="Åland Islands">Åland Islands</option>
@@ -307,30 +307,60 @@
                   </div>
                   <div class="col-md-12">
                     <label for="experience"><u>How Fimiliar Are You</u> With Forex Trading?</label>
-                    <select class="u-full-width" id="experience" required>
-                      <option value="Option 1">Beginner Trader</option>
-                      <option value="Option 2">Intermediate Trader</option>
-                      <option value="Option 3">Advanced Trader</option>
+                    <select class="u-full-width" name="Experience" required>
+                      <option value="" disabled selected hidden>Experience</option>
+                      <option value="Beginner Trader">Beginner Trader</option>
+                      <option value="Intermediate Trader">Intermediate Trader</option>
+                      <option value="Advanced Trader">Advanced Trader</option>
                     </select>
                   </div>
                   <div class="col-md-12">
                     <label for="budget">What Is Your <u>Current Trading Budget?</u></label>
-                    <select class="u-full-width" id="budget" required>
-                      <option value="Option 1">$100 - $500</option>
-                      <option value="Option 2">$500 - $1000</option>
-                      <option value="Option 3">$1000 - $5000</option>
-                      <option value="Option 3">$5000 or more</option>
+                    <select class="u-full-width" name="Budget" required>
+                      <option value="" disabled selected hidden>Capital</option>
+                      <option value="$100 - $500">$100 - $500</option>
+                      <option value="$500 - $1000">$500 - $1000</option>
+                      <option value="$500 - $1000">$500 - $1000</option>
+                      <option value="$5000 or more">$5000 or more</option>
                     </select>
                   </div>
                 </div>
-                <input class="btn btn-medium btn-dark btn-pill enroll" type="submit" value="I AM READY TO CHANGE MY FINANCIAL LIFE FOREVER!">
+          
+                <button class="btn btn-medium btn-dark btn-pill enroll" type="submit" value="I AM READY TO CHANGE MY FINANCIAL LIFE FOREVER!">I AM READY TO CHANGE MY FINANCIAL LIFE FOREVER!</button>
+             
               </form>
             </div>
           </div>
         </div>
       </div>
     </section>
-
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          const form = document.getElementById('myForm');
+          form.addEventListener('submit', function (event) {
+              event.preventDefault(); // Prevent default form submission
+  
+              const formData = new FormData(form);
+  
+              fetch('https://script.google.com/macros/s/AKfycbwzUh3pL1_xez0J8nEY8qfoUAMd-QRRrTywOk-DwZB16lXmMgGGYwIQkptsYas1GCMzLQ/exec', {
+                  method: 'POST',
+                  body: formData
+              }).then(response => {
+                  if (response.ok) {
+                      // Redirect after successful submission
+                      window.location.href = 'https://salescopylight.netlify.app';
+  
+                      // Clear form fields after a short delay to ensure redirection
+                      setTimeout(() => {
+                          form.reset();
+                      }, 100);
+                  }
+              });
+          });
+      });
+  </script>
+  
+  
     <script src="js/jquery-1.11.0.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/script.js"></script>
