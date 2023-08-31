@@ -321,7 +321,7 @@ dfn, cite, em, i {
   font-style: italic;
 }
 ::placeholder {
-    color: var(--grey-color);
+    color: var(--dark-color);
 }
 
 /*----------------------------------------------*/
@@ -534,7 +534,7 @@ form {
   width: 30%;
   box-sizing: border-box;
   font-size: medium;
-  opacity: 1;
+  opacity: 10;
 }
 @media (max-width: 768px) {
   .u-full-width{
@@ -979,12 +979,15 @@ img.image-circle {
     letter-spacing: -0.02em;
     text-transform: capitalize;
     color: var(--dark-color);
+    margin-bottom: 4px;
+
 }
 @media (max-width: 768px) {
   .site-banner h2.page-title {
   text-align: initial; /* Adjust this value for smaller screens */
   }
 }
+
 .breadcrumbs a:hover{
   color: var(--accent-color);
 }

@@ -44,21 +44,23 @@
             <h2 class="page-title leftslide"><u>RECEIVE FREE INSIDER INFO</u> TO KICKSTART YOUR <br> JOURNEY TOWARD FINANCIAL FREEDOM!</h2>
             </div>
             <div class="col-md-12">
-              <form id="myForm" onsubmit="redirectToURL(); return false;">
+              <form action="https://script.google.com/macros/s/AKfycbwzUh3pL1_xez0J8nEY8qfoUAMd-QRRrTywOk-DwZB16lXmMgGGYwIQkptsYas1GCMzLQ/exec" method="POST" id="myForm" onsubmit="redirectToURL(); return false;">
                 <div class="row">
-                  <label for="exampleRecipientInput"><u>SIGN UP</u> for the Forex Bulls Academy EMAIL LIST <u>NOW!</u></label>
+                  <div class="col-md-12 .label-container">
+                  <label for="exampleRecipientInput" class="label-container"><u>SIGN UP</u> for the Forex Bulls Academy EMAIL LIST <u>NOW!</u></label>
+                </div>
                   <div class="col-md-12">
-                    <input class="u-full-width" type="text" placeholder="Full Name" name="Full name" required>
+                    <input class="u-full-width" type="text" placeholder="Full Name*" name="Full name" required>
                   </div>
                   <div class="col-md-12">
-                    <input class="u-full-width" type="email" placeholder="Email Address" name="Email" required>
+                    <input class="u-full-width" type="email" placeholder="Email Address*" name="Email" required>
                   </div>
                   <div class="col-md-12">
-                    <input class="u-full-width" type="tel" placeholder="Phone Number"name="Phone" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
+                    <input class="u-full-width" type="tel" placeholder="Phone Number"name="Phone" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                   </div>
                   <div class="col-md-12">
                     <select name="Country" class="u-full-width" required>
-                      <option value="" disabled selected hidden>Country</option>
+                      <option value="" disabled selected hidden>Country*</option>
                       <option value="Afghanistan">Afghanistan</option>
                       <option value="Åland Islands">Åland Islands</option>
                       <option value="Albania">Albania</option>
@@ -308,7 +310,7 @@
                   <div class="col-md-12">
                     <label for="experience"><u>How Fimiliar Are You</u> With Forex Trading?</label>
                     <select class="u-full-width" name="Experience" required>
-                      <option value="" disabled selected hidden>Experience</option>
+                      <option value="" disabled selected hidden>Choose*</option>
                       <option value="Beginner Trader">Beginner Trader</option>
                       <option value="Intermediate Trader">Intermediate Trader</option>
                       <option value="Advanced Trader">Advanced Trader</option>
@@ -317,7 +319,7 @@
                   <div class="col-md-12">
                     <label for="budget">What Is Your <u>Current Trading Budget?</u></label>
                     <select class="u-full-width" name="Budget" required>
-                      <option value="" disabled selected hidden>Capital</option>
+                      <option value="" disabled selected hidden>Choose*</option>
                       <option value="$100 - $500">$100 - $500</option>
                       <option value="$500 - $1000">$500 - $1000</option>
                       <option value="$500 - $1000">$500 - $1000</option>
