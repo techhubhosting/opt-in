@@ -44,7 +44,7 @@
             <h2 class="page-title leftslide"><u>RECEIVE FREE INSIDER INFO</u> TO KICKSTART YOUR <br> JOURNEY TOWARD FINANCIAL FREEDOM!</h2>
             </div>
             <div class="col-md-12">
-              <form action="https://script.google.com/macros/s/AKfycbwzUh3pL1_xez0J8nEY8qfoUAMd-QRRrTywOk-DwZB16lXmMgGGYwIQkptsYas1GCMzLQ/exec" method="POST" id="myForm" onsubmit="redirectToURL(); return false;">
+              <form action="" method="POST" id="myForm" name="contact-form" onsubmit="redirectToURL(); return false;">
                 <div class="row">
                   <div class="col-md-12 .label-container">
                   <label for="exampleRecipientInput" class="label-container"><u>SIGN UP</u> for the Forex Bulls Academy EMAIL LIST <u>NOW!</u></label>
@@ -337,29 +337,17 @@
       </div>
     </section>
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-          const form = document.getElementById('myForm');
-          form.addEventListener('submit', function (event) {
-              event.preventDefault(); // Prevent default form submission
-  
-              const formData = new FormData(form);
-  
-              fetch('https://script.google.com/macros/s/AKfycbwzUh3pL1_xez0J8nEY8qfoUAMd-QRRrTywOk-DwZB16lXmMgGGYwIQkptsYas1GCMzLQ/exec', {
-                  method: 'POST',
-                  body: formData
-              }).then(response => {
-                  if (response.ok) {
-                      // Redirect after successful submission
-                      window.location.href = 'https://salescopylight.netlify.app';
-  
-                      // Clear form fields after a short delay to ensure redirection
-                      setTimeout(() => {
-                          form.reset();
-                      }, 100);
-                  }
-              });
-          });
-      });
+     const scriptURL = 'https://script.google.com/macros/s/AKfycbywgxss9qgnA6aG85tL51mBZ11Gj3OTgfTpv4sn2ZN5D9bdJ28w2nMIZN_8g4HU_ehe/exec'
+
+const form = document.forms['contact-form']
+
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+  .then(response => alert("Thank you! your form is submitted successfully." ))
+  .then(() => { window.location.reload(); })
+  .catch(error => console.error('Error!', error.message))
+})
   </script>
   
   
