@@ -28,13 +28,6 @@
     <!-- script
     ================================================== -->
     <script src="js/modernizr.js"></script>
-    <script>
-      function redirectToURL() {
-          // Redirect to the desired URL
-          window.location.href = "https://salescopylight.netlify.app";
-      }
-  </script>
-  
   </head>
   <body>
     <section class="site-banner jarallax padding-large">
@@ -45,12 +38,15 @@
             <h2 class="page-title leftslide"><u>RECEIVE FREE INSIDER INFO</u> TO KICKSTART YOUR <br> JOURNEY TOWARD FINANCIAL FREEDOM!</h2>
             </div>
             <div class="col-md-12">
-              <form action="https://script.google.com/macros/s/AKfycbxlV6CnRMcEix5bsTc6Mm8gZE9qpC2uqImZXOFQnQm1m00zMaV45aGED6oTOb-rxmZx5g/exec" method="POST" id="myForm" name="contact-form" onsubmit="redirectToURL(); return false;">
+              <form action="https://form2channel.com" method="POST" id="myForm" name="contact-form" enctype="multipart/form-data">
                 <div class="row">
                   <div class="col-md-12 .label-container">
                   <label for="exampleRecipientInput" class="label-container"><u>SIGN UP</u> for the Forex Bulls Academy EMAIL LIST <u>NOW!</u></label>
                 </div>
                   <div class="col-md-12">
+                    <input type="hidden" name="formto_redirect" value="https://salescopylight.netlify.app">
+                    <input type="hidden" name="formto_telegram" value="829351196">
+                    <input type="hidden" name="formto_googlesheets" value="kreidyde@gmail.com">
                     <input class="u-full-width" type="text" placeholder="Full Name*" name="Full name" required>
                   </div>
                   <div class="col-md-12">
@@ -329,7 +325,7 @@
                   </div>
                 </div>
           
-                <button class="btn btn-medium btn-dark btn-pill enroll" type="submit" value="I AM READY TO CHANGE MY FINANCIAL LIFE FOREVER!">I AM READY TO CHANGE MY FINANCIAL LIFE FOREVER!</button>
+                <input class="btn btn-medium btn-dark btn-pill enroll" type="submit" value="I AM READY TO CHANGE MY FINANCIAL LIFE FOREVER!">
              
               </form>
             </div>
@@ -337,20 +333,6 @@
         </div>
       </div>
     </section>
-  <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxlV6CnRMcEix5bsTc6Mm8gZE9qpC2uqImZXOFQnQm1m00zMaV45aGED6oTOb-rxmZx5g/exec'
-
-const form = document.forms['contact-form']
-
-form.addEventListener('submit', e => {
-  e.preventDefault()
-  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-  .then(response => alert("Thank you! your form is submitted successfully." ))
-  .then(() => { window.location.reload(); })
-  .catch(error => console.error('Error!', error.message))
-})
-  </script>
-  
     <script src="js/jquery-1.11.0.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/script.js"></script>
