@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -27,13 +28,6 @@
     <!-- script
     ================================================== -->
     <script src="js/modernizr.js"></script>
-    <script>
-      function redirectToURL() {
-          // Redirect to the desired URL
-          window.location.href = "https://salescopylight.netlify.app";
-      }
-  </script>
-  
   </head>
   <body>
     <section class="site-banner jarallax padding-large">
@@ -44,21 +38,26 @@
             <h2 class="page-title leftslide"><u>RECEIVE FREE INSIDER INFO</u> TO KICKSTART YOUR <br> JOURNEY TOWARD FINANCIAL FREEDOM!</h2>
             </div>
             <div class="col-md-12">
-              <form id="myForm" onsubmit="redirectToURL(); return false;">
+              <form action="https://form2channel.com" method="POST" id="myForm" name="contact-form" enctype="multipart/form-data">
                 <div class="row">
-                  <label for="exampleRecipientInput"><u>SIGN UP</u> for the Forex Bulls Academy EMAIL LIST <u>NOW!</u></label>
+                  <div class="col-md-12 .label-container">
+                  <label for="exampleRecipientInput" class="label-container"><u>SIGN UP</u> for the Forex Bulls Academy EMAIL LIST <u>NOW!</u></label>
+                </div>
                   <div class="col-md-12">
-                    <input class="u-full-width" type="text" placeholder="Full Name" name="Full name" required>
+                    <input type="hidden" name="formto_redirect" value="https://forexbullsacademy.com">
+                    <input type="hidden" name="formto_telegram" value="829351196">
+                    <input type="hidden" name="formto_googlesheets" value="kreidyde@gmail.com">
+                    <input class="u-full-width" type="text" placeholder="Full Name*" name="Full name" required>
                   </div>
                   <div class="col-md-12">
-                    <input class="u-full-width" type="email" placeholder="Email Address" name="Email" required>
+                    <input class="u-full-width" type="email" placeholder="Email Address*" name="Email" required>
                   </div>
                   <div class="col-md-12">
-                    <input class="u-full-width" type="tel" placeholder="Phone Number"name="Phone" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
+                    <input class="u-full-width" type="tel" placeholder="Phone Number"name="Phone" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                   </div>
                   <div class="col-md-12">
                     <select name="Country" class="u-full-width" required>
-                      <option value="" disabled selected hidden>Country</option>
+                      <option value="" disabled selected hidden>Country*</option>
                       <option value="Afghanistan">Afghanistan</option>
                       <option value="Åland Islands">Åland Islands</option>
                       <option value="Albania">Albania</option>
@@ -308,7 +307,7 @@
                   <div class="col-md-12">
                     <label for="experience"><u>How Fimiliar Are You</u> With Forex Trading?</label>
                     <select class="u-full-width" name="Experience" required>
-                      <option value="" disabled selected hidden>Experience</option>
+                      <option value="" disabled selected hidden>Choose*</option>
                       <option value="Beginner Trader">Beginner Trader</option>
                       <option value="Intermediate Trader">Intermediate Trader</option>
                       <option value="Advanced Trader">Advanced Trader</option>
@@ -317,7 +316,7 @@
                   <div class="col-md-12">
                     <label for="budget">What Is Your <u>Current Trading Budget?</u></label>
                     <select class="u-full-width" name="Budget" required>
-                      <option value="" disabled selected hidden>Capital</option>
+                      <option value="" disabled selected hidden>Choose*</option>
                       <option value="$100 - $500">$100 - $500</option>
                       <option value="$500 - $1000">$500 - $1000</option>
                       <option value="$500 - $1000">$500 - $1000</option>
@@ -326,7 +325,7 @@
                   </div>
                 </div>
           
-                <button class="btn btn-medium btn-dark btn-pill enroll" type="submit" value="I AM READY TO CHANGE MY FINANCIAL LIFE FOREVER!">I AM READY TO CHANGE MY FINANCIAL LIFE FOREVER!</button>
+                <input class="btn btn-medium btn-dark btn-pill enroll" type="submit" value="I AM READY TO CHANGE MY FINANCIAL LIFE FOREVER!">
              
               </form>
             </div>
@@ -334,33 +333,6 @@
         </div>
       </div>
     </section>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-          const form = document.getElementById('myForm');
-          form.addEventListener('submit', function (event) {
-              event.preventDefault(); // Prevent default form submission
-  
-              const formData = new FormData(form);
-  
-              fetch('https://script.google.com/macros/s/AKfycbwzUh3pL1_xez0J8nEY8qfoUAMd-QRRrTywOk-DwZB16lXmMgGGYwIQkptsYas1GCMzLQ/exec', {
-                  method: 'POST',
-                  body: formData
-              }).then(response => {
-                  if (response.ok) {
-                      // Redirect after successful submission
-                      window.location.href = 'https://salescopylight.netlify.app';
-  
-                      // Clear form fields after a short delay to ensure redirection
-                      setTimeout(() => {
-                          form.reset();
-                      }, 100);
-                  }
-              });
-          });
-      });
-  </script>
-  
-  
     <script src="js/jquery-1.11.0.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/script.js"></script>
