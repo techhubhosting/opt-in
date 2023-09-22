@@ -1,8 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Join Forex Bulls Academy</title>
+    <title>Forex Bulls Academy</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +9,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="author" content="">
     <meta name="keywords" content="">
-    <meta name="description" content="Join Forex Bulls Academy; Receive Free Insider Info To Kickstart Your Journey Toward Financial Freedom!">
+    <meta name="description" content="">
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="icomoon/icomoon.css">
     <link rel="stylesheet" type="text/css" media="all" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -24,14 +23,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,800&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="manifest" href="site.webmanifest">
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;500;700&display=swap" rel="stylesheet">
     <!-- script
     ================================================== -->
     <script src="js/modernizr.js"></script>
+    <script>
+      function redirectToURL() {
+          // Redirect to the desired URL
+          window.location.href = "https://salescopylight.netlify.app";
+      }
+  </script>
+  
   </head>
   <body>
     <section class="site-banner jarallax padding-large">
@@ -42,26 +44,21 @@
             <h2 class="page-title leftslide"><u>RECEIVE FREE INSIDER INFO</u> TO KICKSTART YOUR <br> JOURNEY TOWARD FINANCIAL FREEDOM!</h2>
             </div>
             <div class="col-md-12">
-              <form action="https://form2channel.com" method="POST" id="myForm" name="contact-form" enctype="multipart/form-data">
+              <form id="myForm" onsubmit="redirectToURL(); return false;">
                 <div class="row">
-                  <div class="col-md-12 .label-container">
-                  <label for="exampleRecipientInput" class="label-container"><u>SIGN UP</u> for the Forex Bulls Academy EMAIL LIST <u>NOW!</u></label>
-                </div>
+                  <label for="exampleRecipientInput"><u>SIGN UP</u> for the Forex Bulls Academy EMAIL LIST <u>NOW!</u></label>
                   <div class="col-md-12">
-                    <input type="hidden" name="formto_redirect" value="https://forexbullsacademy.com">
-                    <input type="hidden" name="formto_telegram" value="829351196">
-                    <input type="hidden" name="formto_googlesheets" value="kreidyde@gmail.com">
-                    <input class="u-full-width" type="text" placeholder="Full Name*" name="Full name" required>
+                    <input class="u-full-width" type="text" placeholder="Full Name" name="Full name" required>
                   </div>
                   <div class="col-md-12">
-                    <input class="u-full-width" type="email" placeholder="Email Address*" name="Email" required>
+                    <input class="u-full-width" type="email" placeholder="Email Address" name="Email" required>
                   </div>
                   <div class="col-md-12">
-                    <input class="u-full-width" type="tel" placeholder="Phone Number"name="Phone" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                    <input class="u-full-width" type="tel" placeholder="Phone Number"name="Phone" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
                   </div>
                   <div class="col-md-12">
                     <select name="Country" class="u-full-width" required>
-                      <option value="" disabled selected hidden>Country*</option>
+                      <option value="" disabled selected hidden>Country</option>
                       <option value="Afghanistan">Afghanistan</option>
                       <option value="Åland Islands">Åland Islands</option>
                       <option value="Albania">Albania</option>
@@ -311,7 +308,7 @@
                   <div class="col-md-12">
                     <label for="experience"><u>How Fimiliar Are You</u> With Forex Trading?</label>
                     <select class="u-full-width" name="Experience" required>
-                      <option value="" disabled selected hidden>Choose*</option>
+                      <option value="" disabled selected hidden>Experience</option>
                       <option value="Beginner Trader">Beginner Trader</option>
                       <option value="Intermediate Trader">Intermediate Trader</option>
                       <option value="Advanced Trader">Advanced Trader</option>
@@ -320,15 +317,16 @@
                   <div class="col-md-12">
                     <label for="budget">What Is Your <u>Current Trading Budget?</u></label>
                     <select class="u-full-width" name="Budget" required>
-                      <option value="" disabled selected hidden>Choose*</option>
+                      <option value="" disabled selected hidden>Capital</option>
                       <option value="$100 - $500">$100 - $500</option>
+                      <option value="$500 - $1000">$500 - $1000</option>
                       <option value="$500 - $1000">$500 - $1000</option>
                       <option value="$5000 or more">$5000 or more</option>
                     </select>
                   </div>
                 </div>
           
-                <input class="btn btn-medium btn-dark btn-pill enroll" type="submit" value="I AM READY TO CHANGE MY FINANCIAL LIFE FOREVER!">
+                <button class="btn btn-medium btn-dark btn-pill enroll" type="submit" value="I AM READY TO CHANGE MY FINANCIAL LIFE FOREVER!">I AM READY TO CHANGE MY FINANCIAL LIFE FOREVER!</button>
              
               </form>
             </div>
@@ -336,6 +334,33 @@
         </div>
       </div>
     </section>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          const form = document.getElementById('myForm');
+          form.addEventListener('submit', function (event) {
+              event.preventDefault(); // Prevent default form submission
+  
+              const formData = new FormData(form);
+  
+              fetch('https://script.google.com/macros/s/AKfycbwzUh3pL1_xez0J8nEY8qfoUAMd-QRRrTywOk-DwZB16lXmMgGGYwIQkptsYas1GCMzLQ/exec', {
+                  method: 'POST',
+                  body: formData
+              }).then(response => {
+                  if (response.ok) {
+                      // Redirect after successful submission
+                      window.location.href = 'https://salescopylight.netlify.app';
+  
+                      // Clear form fields after a short delay to ensure redirection
+                      setTimeout(() => {
+                          form.reset();
+                      }, 100);
+                  }
+              });
+          });
+      });
+  </script>
+  
+  
     <script src="js/jquery-1.11.0.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/script.js"></script>
