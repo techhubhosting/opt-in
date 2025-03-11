@@ -1,0 +1,303 @@
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: transparent;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  min-width: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.countdown-number {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #9c4fff;
+}
+
+.countdown-label {
+  font-size: 0.7rem;
+  color: #a1a1aa;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.form-container {
+  max-width: 550px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  /* background: rgba(15, 15, 17, 0.6); */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 100%;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.form-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.form-subtitle {
+  color: #a1a1aa;
+  font-size: 0.85rem;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+  position: relative;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #e9d9fd;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  background: transparent;
+  border: 1px solid #27272a;
+  border-radius: 0.5rem;
+  color: #e9d9fd;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) inset;
+  -webkit-appearance: none; /* Removes iOS styling */
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #9c4fff;
+  box-shadow: 0 0 0 2px rgba(248, 229, 179, 0.2),
+    0 2px 5px rgba(0, 0, 0, 0.1) inset;
+}
+
+.form-input::placeholder {
+  color: rgba(161, 161, 170, 0.6);
+}
+
+.submit-button {
+  display: block;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+  margin-top: 1.2rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: none; /* Removes iOS styling */
+  font-family: inherit;
+}
+
+.submit-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: all 0.6s;
+}
+
+.submit-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 0 1px #4f06ac;
+}
+
+.submit-button:hover::before {
+  left: 100%;
+}
+/* Tablet and larger screens */
+@media (min-width: 768px) {
+  .form-container {
+    padding: 2rem;
+  }
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #0a0016 inset !important;
+  box-shadow: 0 0 0px 1000px #0a0016 inset !important;
+  -webkit-text-fill-color: #e9d9fd !important;
+}
+.benefits {
+  margin-top: 1rem;
+  text-align: center;
+}
+.benefits-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+.benefit-item {
+  flex: 1;
+  max-width: 200px;
+  min-width: 160px;
+  position: relative;
+  /* Use the same gradient as the icon for the outer “border” */
+  background: linear-gradient(360deg, rgba(124, 58, 237, 0.15), #9c4fff);
+  border-radius: 10px;
+  padding: 1.25rem 1rem;
+
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.15);
+
+  z-index: 1;
+}
+
+/* This pseudo-element covers the inner area, leaving the gradient as a 1px border */
+.benefit-item::after {
+  content: "";
+  position: absolute;
+  inset: 1px; /* Creates a 1px “border” */
+  border-radius: 10px; /* Slightly smaller to keep the edges consistent */
+  background: #090014; /* Match the inside color to your page background or desired color */
+  z-index: -1; /* Keep it behind the content */
+}
+
+.benefit-item:hover {
+  transform: translateY(-5px);
+}
+.benefit-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.benefit-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: linear-gradient(360deg, rgba(124, 58, 237, 0.15), #9c4fff);
+  flex-shrink: 0;
+  position: relative;
+  box-shadow: 0 1px 15px -5px #9c4fff;
+  z-index: 1;
+}
+
+.benefit-icon::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: 8px;
+  background: #090014;
+  z-index: -1;
+}
+
+.benefit-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.icon-signals {
+  color: #7c3aed;
+}
+
+.icon-analysis {
+  color: #9c4fff;
+}
+
+.icon-strategy {
+  color: #9c4fff;
+}
+
+.icon-motivation {
+  color: #9c4fff;
+}
+
+.icon-community {
+  color: #9c4fff;
+}
+
+.benefit-text {
+  font-size: 16px !important;
+  font-weight: 600;
+  text-align: center;
+  color: #e9d9fd;
+  line-height: 1.4;
+}
+@media (max-width: 950px) {
+  .benefits-row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .benefit-item {
+    flex-basis: calc(33.33% - 1.25rem);
+    max-width: 200px;
+  }
+}
+@media (max-width: 768px) {
+  .benefit-item {
+    flex-basis: calc(50% - 1.25rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .benefits-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .benefit-item {
+    flex-basis: auto;
+    width: 100%;
+    max-width: none;
+  }
+
+  .benefit-text {
+    font-size: 0.875rem;
+  }
+}

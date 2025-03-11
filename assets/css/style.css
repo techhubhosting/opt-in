@@ -1,0 +1,371 @@
+.text-left {
+  text-align: left !important;
+  margin: 0;
+  padding: 0;
+  direction: ltr;
+}
+.logos {
+  height: 65px;
+  width: 85px;
+  vertical-align: bottom;
+  margin-right: 0.5rem;
+  padding-top: 0px;
+}
+
+.section-2-border {
+  border-radius: 20px;
+  padding: 0 10px 0px;
+  border-right: 2px;
+  border-left: 2px;
+  border-style: solid;
+  /* 	border-image: linear-gradient(to bottom, #ccc, #555 66%, #ffffff) 1 100%; */
+  border-image: linear-gradient(to bottom, #000000, #9c4fff, #000000) 1 100%;
+}
+
+.center-paragraph {
+  text-align: center;
+  justify-items: center;
+}
+
+@media (max-width: 768px) {
+  /* Adjust the width based on your needs */
+  .btn-small {
+    font-size: 13px !important;
+    line-height: 20px !important;
+    font-weight: 800;
+    padding: 10px 24px; /* Optionally adjust padding */
+  }
+}
+.small {
+  white-space: nowrap;
+}
+.pro-only {
+  opacity: 0.2;
+}
+
+.italic-style {
+  font-style: italic;
+  font-size: 17px;
+}
+.steps {
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  -webkit-text-fill-color: inherit;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0px;
+  display: flex;
+}
+
+li {
+  list-style: none;
+  text-align: left;
+  padding: 5px;
+  margin-left: -22px;
+  font-size: 16px !important;
+}
+@media (max-width: 768px) {
+  li {
+    font-size: 16px !important;
+  }
+}
+.ph {
+  font-size: 1.3rem; /* Adjust icon size */
+  color: #dec4ff; /* Choose a green color for checkmark */
+  vertical-align: middle; /* Align icon with text */
+  margin-right: 8px; /* Add spacing between icon and text */
+}
+
+.cta-logo .ph-fill {
+  font-size: 48px; /* Adjust the size */
+  color: #dec4ff; /* Adjust the color */
+  padding-top: -500px;
+}
+
+/* General styling for the container */
+.toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: inherit;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+/* Toggle switch styling */
+.toggle-switch {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  border-radius: 15px;
+  background: #c098f4;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+/* Toggle dot styling */
+.toggle-dot {
+  width: 26px;
+  height: 26px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  left: 2px;
+  transition: transform 0.3s ease;
+}
+
+/* Labels */
+.label {
+  color: #999;
+  font-weight: bold;
+}
+
+/* Active states */
+.toggle-switch.active {
+  background: linear-gradient(#9440ff, #6505e0); /* Purple gradient */
+}
+
+.toggle-switch.active .toggle-dot {
+  transform: translateX(30px);
+}
+
+.label.active {
+  color: #ffffff; /* Highlight active label */
+}
+.pricing-light-decoration,
+.pricing-background {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.features {
+  font-size: 16px !important;
+  font-weight: bold;
+  line-height: 24px !important;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #0000;
+  border-radius: 20px;
+  background: linear-gradient(#150d22, #150d22) padding-box,
+    linear-gradient(var(--angle), #070707, #dec4ff) border-box;
+  animation: 8s rotate-value linear infinite;
+}
+
+@keyframes rotate-value {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.pro-card {
+  border-radius: 20px;
+  /* box-shadow: rgba(101, 5, 224, 0.3) 0px 1px 4px; */
+
+  /* box-shadow: rgba(101, 5, 224, 0.3) 0px 20px 30px -10px; */
+  box-shadow: rgba(101, 5, 224, 0.3) 0px 54px 55px,
+    rgba(20, 1, 45, 0.3) 0px -12px 30px, rgba(20, 1, 45, 0.3) 0px 4px 6px,
+    rgba(20, 1, 45, 0.3) 0px 12px 13px, rgba(20, 1, 45, 0.3) 0px -3px 5px;
+  /* box-shadow: rgba(101, 5, 224, 0.3) 0px 18px 50px -10px; */
+}
+
+.pro-card .inner-card {
+  border-radius: 20px;
+  /* background: transparent !important; */
+}
+/* Footer styles */
+footer {
+  background-color: transparent;
+  color: #dec4ff;
+  padding: 1.5rem 1rem;
+}
+
+/* Footer Links */
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  white-space: nowrap;
+}
+
+.footer-links a {
+  color: #dec4ff;
+  text-decoration: none;
+  transition: color 0.2s;
+  padding: 0 0.5rem;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  color: #9c4fff;
+}
+
+.divider {
+  color: #dec4ff;
+}
+
+/* Copyright */
+.copyright {
+  text-align: center;
+  font-size: 13px;
+}
+
+/* Make text smaller on very small screens but maintain layout */
+@media (max-width: 380px) {
+  .footer-links {
+    font-size: 0.75rem;
+  }
+
+  .footer-links a {
+    padding: 0 0.25rem;
+  }
+
+  .copyright {
+    font-size: 0.75rem;
+  }
+}
+
+.policy-headings {
+  font-size: 25px;
+}
+
+.section.testimonials {
+  padding-top: 20px;
+  padding-bottom: 0px;
+}
+.signals-pricing {
+  padding-top: 10px;
+}
+/* Container styles */
+.testimonial-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0rem 1rem;
+  text-align: center;
+}
+
+/* Marquee container */
+.marquee-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 1rem 0;
+}
+
+/* Marquee track */
+.marquee-track {
+  display: flex;
+  gap: 1.5rem;
+  width: fit-content;
+  animation: scroll 40s linear infinite;
+}
+
+/* Pause animation on hover */
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* testimonial-Card styles */
+.testimonial-card {
+  flex: 0 0 auto;
+  width: 280px;
+  /* background: linear-gradient(to bottom, red, #000); */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px;
+}
+
+.testimonial-card img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Scrolling animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% / 1));
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .testimonial-card {
+    width: 280px;
+  }
+
+  .testimonial-card img {
+    height: 500px;
+  }
+}
+
+.text-gradient {
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(#ff4d4d, #ff0000);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.popular-tag {
+  position: absolute;
+  top: 2.5rem;
+  right: 1rem;
+  /* background: #8b5cf6; */
+  background: #120324;
+  color: white;
+  padding: 0.25rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+  animation: pulse 2s infinite;
+}
+.pro-signals {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
+  }
+}
+
+.monthly-signals-card {
+  background: #120324;
+}
+.footer-signals {
+  padding-top: 0px;
+}
+.signals-paragraph {
+  font-size: 28px;
+}
+@media (max-width: 768px) {
+  .signals-paragraph {
+    font-size: 20px;
+  }
+}
