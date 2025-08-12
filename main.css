@@ -2180,7 +2180,7 @@ html {
   
   .hero {
     flex-flow: column;
-    padding-top: 120px;
+    padding-top: 80px;
     display: flex;
   }
   
@@ -3149,7 +3149,7 @@ html {
     }
   
     .hero {
-      padding-top: 120px;
+      padding-top: 80px;
     }
   
     .hero._404-hero {
