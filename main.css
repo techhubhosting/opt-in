@@ -266,7 +266,7 @@ html {
     color: #fff;
     line-height: inherit;
     cursor: pointer;
-    background-color: #2A7AFF !important;
+    background: linear-gradient(45deg, #6bb0f8 0%, #16f30b 100%) !important;
     border: 0;
     border-radius: 0;
     padding: 9px 15px;
@@ -2496,7 +2496,7 @@ html {
     box-shadow: 0 10px 40px #2a2a2a0d;
   }
   
-  .error-message {
+  /* .error-message {
     border: 1px solid var(--border--primary);
     border-radius: var(--_radius---max);
     background-color: var(--background--primary);
@@ -2505,7 +2505,7 @@ html {
     margin-top: 12px;
     padding: 24px 28px 22px;
     box-shadow: 0 10px 40px #2a2a2a0d;
-  }
+  } */
   
   .proof {
     grid-column-gap: 12px;
@@ -3175,9 +3175,9 @@ html {
       grid-row-gap: 48px;
     }
   
-    .h1 {
+    /* .h1 {
       max-width: 320px;
-    }
+    } */
   
     .sections-list {
       grid-column-gap: 144px;
@@ -3277,7 +3277,7 @@ html {
   }
 .text-highlight {
     background: #FFFFFF;
-	background: linear-gradient(180deg, rgba(255, 255, 255, 1) 5%, rgba(77, 142, 255, 1) 50%, rgba(42, 122, 255, 1) 100%);
+	background: linear-gradient(45deg, #6bb0f8 0%, #16f30b 100%);
 	color: transparent;
 	background-clip: text;
 	-webkit-background-clip: text;
@@ -3286,7 +3286,6 @@ html {
 	-moz-text-fill-color: transparent;
 }
 .hero-logo{
-    height: 50px;
-   
+    height: 100px;
     padding-bottom: 0px !important;
 }

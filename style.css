@@ -10,3 +10,393 @@
     left: 0;
     width: 100%;
 }
+
+/* TypeForm-like Questionnaire Styles */
+.typeform-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Progress Bar */
+.progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background-color: rgba(22, 243, 11, 0.1);
+    z-index: 10;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.progress-indicator {
+    height: 100%;
+    background-image: linear-gradient(45deg, #6bb0f8 0%, #16f30b 100%);
+    width: 0%;
+    transition: width 0.5s ease;
+    background-size: 1rem 1rem;
+    animation: progress-bar-stripes 1s linear infinite;
+    box-shadow: 0 0 10px rgba(22, 243, 11, 0.5);
+}
+
+@keyframes progress-bar-stripes {
+    from {
+        background-position: 1rem 0;
+    }
+    to {
+        background-position: 0 0;
+    }
+}
+
+/* Form Steps */
+.form {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.form-step {
+    position: relative; /* Changed from absolute for better stacking */
+    width: 100%;
+    display: none; /* Start with display none */
+    flex-direction: column;
+    justify-content: center;
+    min-height: 350px;
+    margin-bottom: 20px;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+}
+
+.form-step.active {
+    display: flex; /* Show only active step */
+    animation-name: fadeInUp;
+}
+
+/* Define animations explicitly */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 20px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeOutDown {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translate3d(0, 20px, 0);
+    }
+}
+
+@keyframes fadeOutUp {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translate3d(0, -20px, 0);
+    }
+}
+
+.question-container {
+    padding: 20px 0;
+}
+
+.form-step-title {
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.3;
+}
+
+.form-description {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #666;
+}
+
+/* Input Groups */
+.input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #2A7AFF;
+    box-shadow: 0 0 0 2px rgba(42, 122, 255, 0.2);
+    outline: none;
+}
+
+/* Error states */
+.input-group.error input {
+    border-color: #e74c3c;
+    background-color: #fff;
+    border-width: 1px;
+}
+
+.input-group.error input:focus {
+    box-shadow: 0 0 0 1px rgba(231, 76, 60, 0.3);
+}
+
+.input-group.error {
+    position: relative;
+}
+
+.input-group.error::after {
+    content: '';
+    position: absolute;
+    right: 2px;
+    top: 15%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23e74c3c"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 13px;
+    margin-top: 4px;
+    display: none;
+    font-weight: 400;
+    animation: fadeIn 0.2s ease;
+    line-height: 1.4;
+    padding-left: 2px;
+}
+
+.input-group.error .error-message {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Radio Options */
+.radio-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+}
+
+.radio-option:hover {
+    background-color: #f9f9f9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    border-color: #d0d0d0;
+}
+
+/* Custom radio button styling */
+.radio-option input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    margin-right: 12px;
+    position: relative;
+    z-index: 2;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.radio-option input[type="radio"]:checked {
+    border-color: #16f30b;
+    background-color: white;
+}
+
+.radio-option input[type="radio"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #16f30b;
+    background-image: linear-gradient(45deg, #6bb0f8 0%, #16f30b 100%);
+}
+
+.radio-option span {
+    font-size: 16px;
+    position: relative;
+    z-index: 2;
+    font-weight: 500;
+}
+
+.radio-option.selected {
+    border-color: #16f30b;
+    background-color: rgba(22, 243, 11, 0.05);
+    box-shadow: 0 4px 12px rgba(22, 243, 11, 0.15);
+}
+
+.radio-option.selected::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background-image: linear-gradient(45deg, #6bb0f8 0%, #16f30b 100%);
+}
+
+/* Add a subtle animation when selecting */
+.radio-option.selected {
+    animation: pulse 0.5s;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Form Buttons */
+.form-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.continue-btn {
+    width: 100%;
+    padding: 15px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Navigation */
+.form-navigation {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 10px;
+    z-index: 10;
+}
+
+.nav-button {
+    background-color: #f0f0f0;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-button.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav-button:hover {
+    background-color: #e0e0e0;
+    color: #333;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.nav-button svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 767px) {
+    .form-step-title {
+        font-size: 20px;
+    }
+    
+    .radio-option {
+        padding: 12px;
+    }
+    
+    .radio-option span {
+        font-size: 14px;
+    }
+}
+#qualified-content {
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-top: -30px;
+}
+#disqualified-content {
+    border: 1px solid #e0e0e0;
+    padding: 28px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-top: -30px;
+}
+.submit-button {
+    width: 100%;
+    padding: 8px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+}
