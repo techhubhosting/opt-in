@@ -226,7 +226,7 @@
                                                     <p class="form-description">Based on your answers, I think it's a bit too early to join the private inner circle</p>
                                                     <p class="form-description">So I have something a lot better for you…And it fits EXACTLY where you are right now.</p>
                                                     <div class="form-buttons">
-                                                        <button type="button" id="disqualifiedSubmitButton" class="submit-button button primary w-button">CLICK HERE TO TAKE YOUR NEXT STEP TO CONSISTENT PROFITS</button>
+                                                        <a href="https://ignitedtrader.com" class="submit-button button primary w-button" style="text-align: center; text-decoration: none; display: inline-block;">CLICK HERE TO TAKE YOUR NEXT STEP TO CONSISTENT PROFITS</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -258,7 +258,6 @@
             const radioOptions = document.querySelectorAll('.radio-option');
             const continueBtn = document.querySelector('.continue-btn');
             const prevButton = document.getElementById('prevButton');
-            const disqualifiedSubmitButton = document.getElementById('disqualifiedSubmitButton');
             const progressIndicator = document.querySelector('.progress-indicator');
             
             let currentStep = 0;
@@ -424,12 +423,8 @@
                     });
                 }
                 
-                // Submit button for disqualified users
-                if (disqualifiedSubmitButton) {
-                    disqualifiedSubmitButton.addEventListener('click', function(event) {
-                        submitForm(event);
-                    });
-                }
+                // No need for event listeners on submit buttons anymore
+                // We're using a direct link for the disqualified users
             }
             
             function goToStep(stepIndex) {
@@ -689,31 +684,7 @@
                 return dataObject.isQualified;
             }
             
-            // Function to handle redirect when disqualified user clicks button on final screen
-            function submitForm(event) {
-                // Disable button and change text
-                const clickedButton = event.target;
-                clickedButton.disabled = true;
-                clickedButton.textContent = "REDIRECTING...";
-                
-                // If form wasn't submitted yet (perhaps due to an error), submit it now
-                if (!formSubmitted) {
-                    console.log("Form wasn't submitted earlier, submitting now");
-                    submitFormData();
-                }
-                
-                // Clear stored form data
-                try {
-                    localStorage.removeItem('formSubmissionData');
-                    localStorage.removeItem('formProgress');
-                } catch (e) {
-                    console.warn('Could not clear localStorage', e);
-                }
-                
-                // This function is now only used for disqualified users
-                // Redirect disqualified users to ignitedtrader.com
-                window.location.href = 'https://ignitedtrader.com';
-            }
+            // No longer need submitForm function as we're using a direct link for disqualified users
         });
     </script>
 </body>
