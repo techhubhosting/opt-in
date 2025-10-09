@@ -139,7 +139,7 @@
                                                 <h3 class="form-step-title">What account size have you been practicing with?</h3>
                                                 <div class="radio-options">
                                                     <label class="radio-option" data-next="4">
-                                                        <input type="radio" name="account-size" value="demo-only" data-qualify="false">
+                                                        <input type="radio" name="account-size" value="demo-only" data-qualify="true">
                                                         <span>Demo only</span>
                                                     </label>
                                                     <label class="radio-option" data-next="4">
@@ -597,9 +597,9 @@
                             break;
                         case 'account-size':
                             kitTags.push(`account-${value}`);
-                            if (value === 'demo-only' || value === 'less-than-100') {
+                            if (value === 'less-than-100') {
                                 isQualified = false;
-                                disqualificationReasons.push('Account Size: ' + (value === 'demo-only' ? 'Demo Only' : 'Less than $100'));
+                                disqualificationReasons.push('Account Size: Less than $100');
                             }
                             break;
                         case 'struggle':
