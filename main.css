@@ -2377,6 +2377,10 @@ html {
     width: 100%;
     max-width: 400px;
   }
+  .hero-paragraph-text {
+    font-style: italic;
+    font-weight: 600;
+  }
   
   .hero-main {
     grid-column-gap: 20px;
