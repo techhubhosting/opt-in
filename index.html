@@ -583,6 +583,12 @@
                     dataObject.followUp = userPath.followUp;
                 }
 
+                // Default utm_source to direct_telegram if empty
+                const utmSourceElement = document.getElementById('utm_source');
+                if (!utmSourceElement.value) {
+                    dataObject.utm_source = 'direct_telegram';
+                }
+
                 return { formData, dataObject };
             }
             
@@ -597,8 +603,13 @@
                 console.log("Submitting form data:", JSON.stringify(dataObject));
                 
                 Object.entries(dataObject).forEach(([key, value]) => {
-                    formData.append(key, value);
+                    formData.set(key, value);
                 });
+                
+                // Ensure utm_source defaults to direct_telegram if empty
+                if (!formData.get('utm_source')) {
+                    formData.set('utm_source', 'direct_telegram');
+                }
                 
                 try {
                     localStorage.setItem('formSubmissionData', JSON.stringify(dataObject));
