@@ -242,15 +242,15 @@
                                             </div>
                                         </div>
                                         
-                                        <!-- Final step - ONE message for everyone -->
+                                        <!-- Final step - Loading message (will redirect automatically) -->
                                         <div id="step-final" class="form-step final-step" data-step="8">
-                                           
-                                                <h3 class="form-step-title">✅ Your Next Step</h3>
-                                                <p class="form-description">Click the button below to get instant access to my VIP Telegram group - where I share free signals, trade setups, and real market insights designed to help you grow faster and trade smarter.</p>
+                                            <h3 class="form-step-title">🚀 Redirecting to Telegram...</h3>
+                                            <p class="form-description">Please wait while we take you to the VIP Telegram group.</p>
+            
                                                 <a href="https://t.me/theforexbulls" style="text-decoration: none;">
-                                                    <button type="button" class="button primary w-button get-freecourse-btn">Join the VIP Telegram Group Now</button>
+                                                    <button type="button" class="button primary w-button get-freecourse-btn">Click here if not redirected to VIP</button>
                                                 </a>
-                                            
+                                            <div class="loading-spinner"></div>
                                         </div>
                                     </form>
                                     
@@ -619,21 +619,25 @@
                 
                 formSubmitted = true;
                 
-                fetch(
-                    "https://script.google.com/macros/s/AKfycbzfdVxUcKxV9KJIyfMEBP1V6zDrBpProDPS6IN0HReAUa-cUFztzWCusgdeUsLp4_0X6A/exec",
-                    {
-                        method: "POST",
-                        mode: "no-cors",
-                        body: formData,
-                    }
-                )
-                .then(() => {
-                    console.log("Form data submitted successfully");
-                })
-                .catch((error) => {
-                    console.error("Error submitting form data:", error);
-                    formSubmitted = false;
+                // Send data using Beacon API (doesn't wait for response)
+                const formDataObject = {};
+                formData.forEach((value, key) => {
+                    formDataObject[key] = value;
                 });
+                
+                // Convert FormData to URL-encoded string
+                const urlEncodedData = new URLSearchParams(formDataObject).toString();
+                
+                // Send data using Beacon API
+                navigator.sendBeacon(
+                    "https://script.google.com/macros/s/AKfycbzfdVxUcKxV9KJIyfMEBP1V6zDrBpProDPS6IN0HReAUa-cUFztzWCusgdeUsLp4_0X6A/exec",
+                    new Blob([urlEncodedData], { type: 'application/x-www-form-urlencoded' })
+                );
+                
+                // Small delay to ensure beacon initiates before redirect
+                setTimeout(() => {
+                    window.location.href = "https://t.me/theforexbulls";
+                }, 100);
             }
         });
     </script>

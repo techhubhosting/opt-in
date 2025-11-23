@@ -80,7 +80,7 @@
     border: 1px solid #e0e0e0;
     padding: 15px;
     border-radius: 12px;
-    min-height: 200px;
+    min-height: 0px;
     margin-top: -20px;
 }
 #step-contact{
